@@ -1,28 +1,36 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<template lang='html'>
+  <main>
+    <h1>Rick and Morty</h1>
+    <character-list :characters="characters"></character-list>
+  </main>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+
+import CharacterList from './components/CharacterList.vue'
 
 export default {
-  name: 'App',
+  name: 'app',
+  data () {
+    return {
+      characters: [],
+      selectedCharacter:null
+    };
+  },
+  mounted(){
+    fetch('https://rickandmortyapi.com/api/character/')
+    .then(res => res.json())
+    .then(characters => this.characters = characters.results);
+  },
+  
   components: {
-    HelloWorld
+    "character-list": CharacterList
   }
+
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang='css' scoped>
+
 </style>
