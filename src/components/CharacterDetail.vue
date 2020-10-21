@@ -2,6 +2,7 @@
 <article>
     <h3>{{ character.name }}</h3>
     <p>{{ character.species }}</p>
+    <p>{{character.origin.name}}</p>
     <img :src="character.image" alt="character picture">
 </article>
 
