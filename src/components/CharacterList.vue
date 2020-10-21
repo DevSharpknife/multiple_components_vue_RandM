@@ -2,6 +2,8 @@
   <section>
       <ul>
           <list-item v-for="(character, id) in characters" :key="character.id" :character="character"></list-item>
+          <!-- <label for="character">Select a character:</label>
+          <select name="" id="character" v-model="character.name"></select> -->
       </ul>
   </section>
 </template>

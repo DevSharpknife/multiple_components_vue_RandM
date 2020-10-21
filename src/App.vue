@@ -1,7 +1,13 @@
 <template lang='html'>
   <main>
     <h1>Rick and Morty</h1>
-    <character-list :characters="characters"></character-list>
+    <label for="selected_character">Select a character</label>
+    <select id="selected_character" v-model="selectedCharacter">
+    <option v-for="(character, id) in characters" :key="character.name" :character="character" :value="character">{{ character.name }}</option>
+    </select>
+
+    
+    <!-- <character-list :characters="characters"></character-list> -->
     <character-detail :character="selectedCharacter"></character-detail>
   </main>
 </template>
