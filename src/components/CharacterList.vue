@@ -1,7 +1,7 @@
 <template lang='html'>
   <section>
       <ul>
-          <list-item v-for="(character, id) in characters.results" :key="character.results.id"></list-item>
+          <list-item v-for="(character, id) in characters" :key="character.id" :character="character"></list-item>
       </ul>
   </section>
 </template>

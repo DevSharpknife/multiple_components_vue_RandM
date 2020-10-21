@@ -1,12 +1,13 @@
 <template lang='html'>
 
-    <li>{{character.results.name}}</li>
+    <li>{{character.name}}</li>
 
 </template>
 
 <script>
 export default {
-    name: "list-item"
+    name: "list-item",
+    props: ["character"]
 
 }
 </script>
